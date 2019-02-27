@@ -1,0 +1,45 @@
+#include <pch.h>
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	std ::	string s;
+    std ::	cout << "Enter your name\n"; 
+	getline(std::cin, s);
+	std ::	cout << "Hello," << s << std::endl;
+	return 0;
+}
+
+______________________________________________
+#include "pch.h"
+#include <iostream>
+using namespace std;
+int main()
+{ 
+	double a,b,c;
+	int answer;
+    cout << "Hello,enter 2 number: \n"; 
+	cin >> a >> b;
+	cout << "what action do you want to do? \n";
+	cout << "1) addition \n";
+	cout << "2) subtraction \n";
+	cin >> answer;
+	while (answer !=1 && answer !=2)
+	{
+		cout << "Error,try again\n";
+		cin >> answer;
+	}
+	if (answer == 1)
+	{
+		c = a + b;
+		cout << "Result:"<<c<<" \n";
+	}
+	if (answer == 2)
+	{
+		c = a - b;
+		cout << "Result:" << c << " \n";
+	}
+	return 0;
+
+}
