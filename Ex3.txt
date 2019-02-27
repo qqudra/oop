@@ -1,0 +1,74 @@
+#include <iostream>
+#include <string>
+#include "pch.h"
+
+	using namespace std;
+class Books
+{
+public:
+	string Book_avtor;//Автор книги
+	string Book_name;//Название книги
+	int Book_price;//Цена книги
+	void setbooks()//Ввод книги
+	{
+		cout << "Enter Book Avtor,Books name,Book price" << "\n";
+		cin >> Book_avtor >> Book_name >> Book_price;
+		cout << "________________________________________" << "\n";
+	}
+	void conclusion()
+	{
+		cout << "Avtor:" << Book_avtor   << "\n";
+		cout << "_________________________________________________" << "\n";
+		cout << "Name:" << Book_name << "\n";
+		cout << "_________________________________________________" << "\n";
+		cout << "Book price:" << Book_price << "\n";
+		cout << "_________________________________________________" << "\n";
+	}
+	void nds()
+	{   
+		cout << "price including tax: " << Book_price / 0.18 << "\n";
+		cout << "________________________________________" << "\n";
+		cout << "price including sale:" << Book_price * 0.2 << "\n";
+	}
+
+};
+	int main()
+	{
+		int n;
+		int x;
+		int answer;
+		Books Book[100];
+		cout << "How many books do you want to enter?"<<"\n";
+		cin >> x;
+		if(x<=0)
+		{
+			cout << "Okay,goodbye";
+			return(0);
+		}
+		cout << "Enter the book:"<<"\n";
+		for (n = 1; n < x+1; n++)
+		{
+			Book[n].setbooks();
+		}
+		cout << "What book number would you like to see or all at once?All-press(0),Convert book - select its number"<<"\n";
+		cin >> answer;
+		while (answer<0 || answer>x)
+		{
+			cout << "Error,try again"<<"\n";
+			cin >> answer;
+		}
+		if (answer == 0)
+		{
+			for (n = 1; n < x+1; n++)
+			{
+				Book[n].conclusion();
+				Book[n].nds();
+			}
+		}
+		if (answer > 0 || answer <= x)
+		{
+			Book[answer].conclusion();
+			Book[answer].nds();
+		}
+		return 0;
+	}
