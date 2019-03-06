@@ -1,0 +1,131 @@
+#include <iostream>
+#include <string>
+//#include "pch.h"
+	using namespace std;
+int a[100];
+int n;
+class Students
+{
+private:
+
+	string Name_Student;
+	string SerName_Student;
+    string LastName_Student;
+	int student_grade[4];
+	int det_grade;
+
+public:
+	void setstudent()
+
+	{
+
+		cout << "Enter Name,SerName,LastName,studentgrade size 4" << "\n";
+
+		cin >> Name_Student >> SerName_Student >> LastName_Student>>student_grade[1]>>student_grade[2]>>student_grade[3]>>student_grade[4];
+
+		cout << "_________________________________________________" << "\n";
+
+	}
+
+	void thedeterminantoftheaveragescore()
+	{
+
+
+		det_grade=(student_grade[1]+student_grade[2]+student_grade[3]+student_grade[4])/4;
+        a[n]=det_grade;
+
+    }
+
+	void conclusion()
+
+	{
+
+		cout << "Name:" << Name_Student   << "\n";
+
+		cout << "_________________________________________________" << "\n";
+
+		cout << "SerName:" << SerName_Student << "\n";
+
+		cout << "_________________________________________________" << "\n";
+
+		cout << "LastName:" << LastName_Student << "\n";
+
+		cout << "_________________________________________________" << "\n";
+		
+		cout << "Student grade:" << student_grade[1] <<","<<student_grade[2]<<","<<student_grade[3]<<","<<student_grade[4]<< "\n";
+
+		cout << "_________________________________________________" << "\n";
+		
+		cout << "Student det_grade:" << ((student_grade[1]+student_grade[2]+student_grade[3]+student_grade[4])/4) << "\n";
+
+		cout << "*************************************************" << "\n";
+
+	}
+};
+	int main()
+
+	{
+		int x,y=4,m;
+
+		Students Student[100];
+		
+		cout << "How many students?"<<"\n";
+
+		cin >> y;
+
+		if(y<=0)
+
+	    	{
+
+		    	cout << "Okay,goodbye";
+
+		    	return(0);
+
+	    	}
+
+		cout << "Enter info:"<<"\n";
+
+		for (n = 1; n < y+1; n++)
+
+	    	{
+
+		    	Student[n].setstudent();
+
+		    }
+		for (n = 1; n < y+1; n++)
+
+			{
+
+				Student[n].conclusion();
+
+			}
+		
+		for (n = 1; n < y+1; n++)
+
+			{
+
+				Student[n].thedeterminantoftheaveragescore();
+			}
+		if(y<=3)
+		{
+		    for (n=1;n<y+1;n++)
+            {
+                cout<<a[n]<<"\n";
+            }
+            return 0;
+		}
+        for(n=1;n<y;n++)
+            {
+                if(a[n]>a[n+1])
+                {
+                    m=a[n+1];
+                    a[n]=a[n+1];
+                    a[n+1]=m;
+                }
+            }
+            cout<<"Grade max->low";
+                cout<<a[y]<<"\n";
+                cout<<a[y-1]<<"\n";
+                cout<<a[y-2]<<"\n";
+		return 0;
+	}
