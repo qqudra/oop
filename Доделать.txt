@@ -1,0 +1,145 @@
+#include <iostream>
+#include <string>
+//#include "pch.h"
+	using namespace std;
+class Students
+int a[100];
+{
+
+private:
+
+	string Name_Student;
+	string SerName_Student;
+    string LastName_Student;
+	int student_grade[4];
+	int det_grade;
+
+public:
+   // int &grade(void){return det_grade;}
+	void setstudent()
+
+	{
+
+		cout << "Enter Name,SerName,LastName,studentgrade size 4" << "\n";
+
+		cin >> Name_Student >> SerName_Student >> LastName_Student>>student_grade[1]>>student_grade[2]>>student_grade[3]>>student_grade[4];
+
+		cout << "________________________________________" << "\n";
+
+	}
+
+	void thedeterminantoftheaveragescore()
+	{
+
+
+		det_grade=(student_grade[1]+student_grade[2]+student_grade[3]+student_grade[4])/4;
+       
+
+    }
+
+	void conclusion()
+
+	{
+
+		cout << "Name:" << Name_Student   << "\n";
+
+		cout << "_________________________________________________" << "\n";
+
+		cout << "SerName:" << SerName_Student << "\n";
+
+		cout << "_________________________________________________" << "\n";
+
+		cout << "LastName:" << LastName_Student << "\n";
+
+		cout << "_________________________________________________" << "\n";
+		
+		cout << "Student grade:" << student_grade[1] <<","<<student_grade[2]<<","<<student_grade[3]<<","<<student_grade[4]<< "\n";
+
+		cout << "_________________________________________________" << "\n";
+		
+		cout << "Student det_grade:" << ((student_grade[1]+student_grade[2]+student_grade[3]+student_grade[4])/4) << "\n";
+
+		cout << "*************************************************" << "\n";
+
+	}
+	
+void searchofayoungman()
+    {
+        for (n=1,n<y+1,n++)
+        {
+            a[n]=Student[n].det_grade;
+            
+        }
+    }
+
+};
+
+ /* void searchofayoungman(int y,int n,Students Student[100])
+    {
+        int m;
+        for(n=1;n<y+1;n++)
+        {
+              if (Student[n].grade()>Student[n+1].grade())
+                  {
+                         m=Student[n].grade();
+                         Student[n].grade()=Student[n+1].grade();
+                         Student[n+1].grade()=m;
+                  }
+        }
+        for(n=y;n>y-3;n--)
+        {
+            cout<<Student[n].grade()<<"\n";
+        }
+    }
+*/
+    
+    
+    
+    
+	int main()
+
+	{
+
+		int n;
+
+		int x,y;
+
+		Students Student[100];
+		
+		cout << "How many students?"<<"\n";
+
+		cin >> y;
+
+		if(y<=0)
+
+		{
+
+			cout << "Okay,goodbye";
+
+			return(0);
+
+		}
+
+		cout << "Enter info:"<<"\n";
+
+		for (n = 1; n < y+1; n++)
+
+		{
+
+			Student[n].setstudent();
+
+		}
+		for (n = 1; n < y+1; n++)
+
+			{
+
+				Student[n].conclusion();
+
+			}
+		//searchofayoungman(y,n,Student);
+        Student[n].searchofayoungman(y);
+		
+
+		return 0;
+
+	}
