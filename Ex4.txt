@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+int a[12];
+int i;
+int mama;
+using namespace std;
+void enter()
+{
+	for (i = 0; i < 12; i++)
+	{
+		cout << "Enter array number:\n";
+		cin >> a[i];
+	}
+	cout << "________________________________\n";
+	cout << "Last Array\n";
+	for (i = 0; i < 12; i++)
+	{
+		cout << a[i] << "|";
+	}
+	cout << "\n";
+	cout << "________________________________\n";
+}
+void sorts()
+{
+	for (i = 0; i < 12; i = i + 2)
+	{
+		mama = a[i];
+		a[i] = a[i + 1];
+		a[i + 1] = mama;
+	}
+	cout << "New Array:\n";
+}
+void conclusion()
+{
+	for (i = 0; i < 12; i++)
+	{
+		cout << a[i] << "|";
+	}
+}
+int main()
+{
+        enter();
+        sorts();
+        conclusion();
+		return 0;
+}
