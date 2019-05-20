@@ -1,0 +1,68 @@
+#include <iostream>
+#include <clocale>
+using namespace std;
+void menu()
+{
+	cout << "Какое действие хочешь выполнить?" << endl;
+	cout << "+" << endl;
+	cout << "-" << endl;
+	cout << "/" << endl;
+	cout << "*" << endl;
+}
+void calc(int x,int y)
+{
+	char del;
+	float z;
+	menu();
+	cin >> del;
+	switch (del)
+	{
+	case'+':
+			z = x + y;
+			break;
+	case'*':
+		z = x * y;
+		break;
+	case'/':
+		z = x / y;
+		break;
+	case'-':
+		z = x - y;
+		break;
+	}
+	cout << "Result:" << z << endl;
+}
+void calc(float x, float y)
+{
+	char del;
+	float z;
+	menu();
+	cin >> del;
+	switch (del)
+	{
+	case'+':
+		z = x + y;
+		break;
+	case'*':
+		z = x * y;
+		break;
+	case'/':
+		z = x / y;
+		break;
+	case'-':
+		z = x - y;
+		break;
+	}
+	cout << "Result:" << z << endl;
+}
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	float x, y;
+	cout << "Привет,введи 2 числа целых числа!" << endl;
+	cin >> x >> y;
+	calc(x,y);
+	cout << "Введи 2 дробных числа числа!" << endl;
+	cin >> x >> y;
+	calc(x, y);
+}
